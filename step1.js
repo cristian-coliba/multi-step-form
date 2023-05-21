@@ -72,6 +72,12 @@ function validatePersonalInfo(name, email, phoneNumber) {
     colorPhoneNumberInput.style.border = "1px solid red";
     return `Phone number is required`;
   }
+  const numbers = /^[0-9]+$/;
+  if (phoneNumber.match(numbers)) {
+  } else {
+    colorPhoneNumberInput.style.border = "1px solid red";
+    return `Phone number should contain only numbers`;
+  }
   colorPhoneNumberInput.style.border = "1px solid rgb(184, 182, 182)";
 
   return "";
