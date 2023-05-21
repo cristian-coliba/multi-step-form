@@ -1,0 +1,355 @@
+body {
+  background-color: #eff5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0px;
+  font-family: "Ubuntu-Regular", sans-serif;
+}
+
+.mb-5 {
+  margin-bottom: 10px;
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 2px;
+}
+h1 {
+  color: RGB(4, 38, 87);
+}
+h4 {
+  color: RGB(175, 175, 183);
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 25px;
+}
+
+/* BOX CONTAINER */
+.box {
+  height: 600px;
+  width: 850px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  display: flex;
+}
+
+/* BOX STEPS */
+.box-steps {
+  width: 214px;
+  text-align: center;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 20px 0px 20px 20px;
+  padding: 30px;
+  background-color: gray;
+  border-radius: 20px;
+  background-image: url("./assets/images/bg-sidebar-desktop.svg");
+}
+
+.box-step {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.step-number {
+  text-align: left;
+  font-size: 12px;
+  color: RGB(142, 142, 255);
+}
+.step-content {
+  font-weight: bold;
+  color: white;
+  text-align: left;
+}
+.circle {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid white;
+  color: white;
+}
+.circle-active {
+  background-color: RGB(190, 225, 252);
+  color: rgb(24, 2, 90);
+  font-weight: bold;
+}
+
+/* BOX FORMS */
+.box-forms {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 3;
+  padding: 50px;
+  padding-top: 60px;
+}
+.box-forms-inputs {
+  flex-grow: 3;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.error-message {
+  color: red;
+  font-size: 14px;
+}
+
+/* BUTTONS */
+.step-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.next-step--btn {
+  padding: 10px 19px;
+  border-radius: 9px;
+  background-color: RGB(3, 41, 90);
+  color: RGB(232, 244, 253);
+  border: 0px;
+  cursor: pointer;
+}
+.next-step--btn:hover {
+  background-color: RGB(49, 61, 99);
+  transform: scale(1.02);
+}
+.confirm--btn {
+  background-color: #a18be8;
+}
+.confirm--btn:hover {
+  background-color: #8468df;
+}
+.back--btn-transparent {
+  background-color: transparent;
+  color: gray;
+  font-weight: bold;
+}
+.back--btn-transparent:hover {
+  background-color: transparent;
+  color: rgb(95, 95, 95);
+  transform: scale(1.05);
+}
+
+/* STEP 1 */
+.auth__input {
+  width: 100%;
+  height: 32px;
+  border: 1px solid rgb(184, 182, 182);
+  border-radius: 6px;
+}
+.auth__label-input {
+  margin: 20px 0px 20px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* STEP 2 */
+.plan-select {
+  display: flex;
+  justify-content: space-between;
+  gap: 0px;
+}
+.plan-container :checked + div {
+  border: 1.2px solid blue;
+  background-color: rgb(230, 240, 245);
+}
+.plan-radio-input {
+  position: absolute;
+  opacity: 0;
+}
+.plan-radio-label {
+  border: 1.2px solid gray;
+  padding: 14px;
+  border-radius: 9px;
+  width: 100px;
+}
+.plan-radio-label:hover {
+  border: 1.2px solid blue;
+  cursor: pointer;
+}
+.plan-content {
+  padding-top: 40px;
+}
+.plan-content h3 {
+  color: rgb(20, 6, 148);
+}
+.plan-content p {
+  color: rgb(198, 198, 203);
+}
+.plan-period-toggle input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  position: absolute;
+  opacity: 0;
+}
+.plan-period-toggle {
+  height: 40px;
+  background-color: rgb(216, 220, 221);
+  opacity: 0.75;
+  border-radius: 12px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.plan-period-toggle label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 66px;
+  height: 33px;
+  border-radius: 33px;
+  background: blue;
+  display: block;
+  position: relative;
+}
+.plan-period-toggle label:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 29px;
+  height: 29px;
+  background: #496ed6;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+.plan-period-toggle input:checked + label {
+  background: #bada55;
+}
+.plan-period-toggle input:checked + label:after {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+.plan-period-toggle label:active:after {
+  width: 43px;
+}
+
+/* STEP 3 */
+.addons-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid gray;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.addons-checkbox-label:hover {
+  border: 1.2px solid blue;
+  background-color: rgb(230, 240, 245);
+}
+
+/* STEP 4 */
+.summary-plan-container {
+  background-color: rgb(216, 220, 221);
+  padding: 20px;
+  border-radius: 12px;
+}
+#summaryBtnChangePlan {
+  border: none;
+  padding: 0px;
+  color: grey;
+  background-color: rgb(216, 220, 221);
+  cursor: pointer;
+}
+#summaryTotalPrice {
+  color: rgb(55, 67, 197);
+  font-size: 20px;
+  font-weight: bold;
+}
+#summaryBtnChangePlan:hover {
+  color: rgb(63, 75, 200);
+  background-color: rgb(216, 220, 221);
+  text-decoration: underline;
+}
+.summary-addon-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submitted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hidden {
+  display: none;
+}
+.visible {
+  display: flex;
+}
+
+@media only screen and (max-width: 804px) {
+  body {
+    display: block;
+  }
+  .box {
+    height: auto;
+    flex-direction: column;
+    width: 100%;
+    background-color: #eff5ff;
+  }
+  .box-steps {
+    width: 100%;
+    margin: 0px;
+    padding: 22px 0px 82px 0px;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 0px;
+    background-image: url("./assets/images/bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: center 28%;
+    background-size: cover;
+  }
+  .box-step-text {
+    display: none;
+  }
+  .box-forms {
+    padding: 30px 25px 30px 25px;
+    margin-top: -60px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  }
+
+  .step-buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: -webkit-fill-available;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .plan-select {
+    display: flex;
+    flex-direction: column;
+  }
+  .plan-container {
+    margin: 5px;
+    flex-direction: column;
+  }
+  .plan-radio-label {
+    width: auto;
+    display: flex;
+    gap: 10px;
+  }
+  .plan-content {
+    padding: 0px;
+  }
+}
