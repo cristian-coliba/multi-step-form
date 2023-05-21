@@ -1,5 +1,6 @@
 const planSelectErrorMessage = document.querySelector("#planSelect_error");
 const GoBackBtnToStep1 = document.getElementById("go-back-to-step1");
+const step2Loader = document.querySelector(".step2-loader");
 
 const plans = [
   { type: "arcade", pricePerMonth: 9, pricePerYear: 108 },
@@ -29,11 +30,19 @@ document.getElementById("formStep2").onsubmit = function (e) {
     userData.planPrice = selectedPlan.pricePerMonth;
   }
 
-  step2Box.classList.remove("visible");
-  step2Box.classList.add("hidden");
-  step3Box.classList.remove("hidden");
-  step3Box.classList.add("visible");
-  changeSidebarStepNumber(1, 2);
+  step2Loader.classList.remove("hidden");
+  step2Loader.classList.add("visible");
+
+  setTimeout(() => {
+    step2Box.classList.remove("visible");
+    step2Box.classList.add("hidden");
+    step3Box.classList.remove("hidden");
+    step3Box.classList.add("visible");
+    changeSidebarStepNumber(1, 2);
+
+    step2Loader.classList.remove("visible");
+    step2Loader.classList.add("hidden");
+  }, 1000);
 };
 
 GoBackBtnToStep1.addEventListener("click", function () {

@@ -10,6 +10,7 @@ const step3Box = document.getElementById("step3");
 const step4Box = document.getElementById("step4");
 const step5Box = document.getElementById("step5");
 const circleSteps = document.getElementsByClassName("circle");
+const step1Loader = document.querySelector(".step1-loader");
 
 document.getElementById("formStep1").onsubmit = function (e) {
   e.preventDefault();
@@ -25,14 +26,20 @@ document.getElementById("formStep1").onsubmit = function (e) {
     return;
   }
   signupErrorMessage.textContent = "";
+  step1Loader.classList.remove("hidden");
+  step1Loader.classList.add("visible");
 
-  //update userData and UI
-  userData = { ...userData, name, email, phoneNumber };
-  step1Box.classList.remove("visible");
-  step1Box.classList.add("hidden");
-  step2Box.classList.remove("hidden");
-  step2Box.classList.add("visible");
-  changeSidebarStepNumber(0, 1);
+  setTimeout(() => {
+    //update userData and UI
+    userData = { ...userData, name, email, phoneNumber };
+    step1Box.classList.remove("visible");
+    step1Box.classList.add("hidden");
+    step2Box.classList.remove("hidden");
+    step2Box.classList.add("visible");
+    changeSidebarStepNumber(0, 1);
+    step1Loader.classList.remove("visible");
+    step1Loader.classList.add("hidden");
+  }, 1000);
 };
 
 function changeSidebarStepNumber(currentIndex, nextIndex) {

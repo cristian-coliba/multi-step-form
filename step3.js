@@ -27,6 +27,7 @@ const summaryPlanPrice = document.getElementById("summaryPlanPrice");
 const summaryHr = document.getElementById("summaryHr");
 const summaryTotalPlanPeriod = document.getElementById("summaryTotalPlanPeriod");
 const summaryTotalPrice = document.getElementById("summaryTotalPrice");
+const step3Loader = document.querySelector(".step3-loader");
 
 document.getElementById("formStep3").onsubmit = function (e) {
   e.preventDefault();
@@ -52,12 +53,20 @@ document.getElementById("formStep3").onsubmit = function (e) {
       userData.planPeriod === "month" ? addons[2].priceMonth : addons[2].priceYear;
   }
 
-  step3Box.classList.remove("visible");
-  step3Box.classList.add("hidden");
-  step4Box.classList.remove("hidden");
-  step4Box.classList.add("visible");
-  changeSidebarStepNumber(2, 3);
-  updateSummaryUI();
+  step3Loader.classList.remove("hidden");
+  step3Loader.classList.add("visible");
+
+  setTimeout(() => {
+    step3Box.classList.remove("visible");
+    step3Box.classList.add("hidden");
+    step4Box.classList.remove("hidden");
+    step4Box.classList.add("visible");
+    changeSidebarStepNumber(2, 3);
+    updateSummaryUI();
+
+    step3Loader.classList.remove("visible");
+    step3Loader.classList.add("hidden");
+  }, 700);
 };
 
 GoBackBtnToStep2.addEventListener("click", function () {
