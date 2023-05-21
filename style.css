@@ -28,6 +28,13 @@ h4 {
   padding-bottom: 25px;
 }
 
+input[type="text"],
+input[type="number"],
+input {
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
 /* BOX CONTAINER */
 .box {
   height: 600px;
@@ -141,6 +148,8 @@ h4 {
   height: 32px;
   border: 1px solid rgb(184, 182, 182);
   border-radius: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .auth__label-input {
   margin: 20px 0px 20px 0px;
