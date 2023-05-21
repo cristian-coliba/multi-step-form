@@ -322,16 +322,10 @@ h4 {
   }
 
   .step-buttons {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: -webkit-fill-available;
-    padding-left: 20px;
-    padding-right: 20px;
     background-color: white;
-    padding: 20px;
     margin-bottom: 0px;
+    padding: 0px;
+    padding-top: 40px;
   }
 }
 
